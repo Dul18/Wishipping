@@ -173,3 +173,12 @@
     1. create user profile
     2. add form to update user details
 
+31. Publish to Heroku
+
+    1. create and config node project
+    2. serve build folder in frontend folder
+    3. create heroku account
+    4. connect it to github
+    5. create mongodb atlas db
+    6. set database connection in heroku env variables
+    7. Commit and push
