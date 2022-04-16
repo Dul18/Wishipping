@@ -168,3 +168,8 @@
     2. create order history api
     3. use api in the frontend
 
+30. User Profile Screen
+
+    1. create user profile
+    2. add form to update user details
+
