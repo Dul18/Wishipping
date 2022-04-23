@@ -217,3 +217,10 @@
     1. create products button
     2. implement backend api
     3. fetch data
+
+38. Edit Product
+
+    1. create edit button
+    2. create edit product ui
+    3. display product info in the input boxes
+    
