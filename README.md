@@ -223,4 +223,17 @@
     1. create edit button
     2. create edit product ui
     3. display product info in the input boxes
+
+39. Implement Update Product
+
+    1. create edit product backend api
+    2. handle update click
+
+40. Upload Product Image
+
+    1. create cloudinary account
+    2. use api key in env
+    3. handle upload file
+    4. implement backend api to upload
+    
     
