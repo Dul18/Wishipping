@@ -260,4 +260,8 @@
     2. handle click action
     3. implement backend api to delete
     
-    
+45. List Users
+
+    1. craete user list screen
+    2. implement backend api
+    3. fetch and display user
