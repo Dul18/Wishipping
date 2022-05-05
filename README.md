@@ -300,3 +300,9 @@
     4. set api key in env file
     5. change pay order in orderRouter
     6. send email for receipt
+
+50. Review Orders
+
+    1. create submit review form
+    2. handle submit
+    3. implement backend api for review
