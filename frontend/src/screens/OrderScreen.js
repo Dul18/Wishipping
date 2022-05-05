@@ -255,7 +255,8 @@ function OrderScreen() {
                     <ListGroup.Item>
                       <Row>
                         <Col>Shipping</Col>
-                        <Col>${order.shippingPrice.toFixed(2)}</Col>
+                        {/* <Col>${order.shippingPrice.toFixed(2)}</Col> */}
+                        <Col>0</Col>
                       </Row>
                     </ListGroup.Item>
                     <ListGroup.Item>
