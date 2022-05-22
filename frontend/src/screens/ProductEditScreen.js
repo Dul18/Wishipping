@@ -117,7 +117,7 @@ function ProductEditScreen() {
             }
         }
 
-        const uploadFileHandler = async(e)=>{
+        const uploadFileHandler = async(e, forImages)=>{
             const file = e.target.files[0];
             const bodyFormData = new FormData();
             bodyFormData.append('file',file);
@@ -130,12 +130,21 @@ function ProductEditScreen() {
                     },
                   });
                   dispatch({ type: 'UPLOAD_SUCCESS' });
-                  toast.success('Image uploaded successfully');
-                  setImage(data.secure_url);
+                 
+                  if(forImages){
+                    setImages([...images,data.secure_url]);
+                  }else{
+                    setImage(data.secure_url);
+                  }
+            toast.success('Image uploaded successfully.click Update to apply it')    
             }catch(err){
                 toast.error(getError(err));
                 dispatch({type: 'UPLOAD_FAIL', payload: getError(err)})
             }
+        }
+        const deleteFileHandler = async(fileName)=>{
+          setImages(images.filter((x)=> x !== fileName));
+          toast.success('Image removed successfully. click Update to apply it')
         }
   return (
     <Container className='small-container'>
@@ -182,10 +191,32 @@ function ProductEditScreen() {
                     />   
             </Form.Group>   
             <Form.Group className='mb-3' controlId='imageFile'>
-                <Form.Label>Upload File</Form.Label>
+                <Form.Label>Upload Image</Form.Label>
                     <Form.Control
                     type='file'
                     onChange={uploadFileHandler}
+                    />  
+                {loadingUpload && <LoadingBox></LoadingBox>} 
+            </Form.Group>
+            <Form.Group className='mb-3' controlId='additionalImage'>
+                <Form.Label>Additional Images</Form.Label>
+                {images.length === 0 && <MessageBox>No Image</MessageBox>}
+                <ListGroup variant='flush'>
+                  {images.map((x)=>(
+                    <ListGroup.Item key={x}>
+                      {x}
+                      <Button variant='light' onClick={()=>deleteFileHandler(x)}>
+                        <i className='fa fa-times-circle'></i>
+                      </Button>
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+            </Form.Group>
+            <Form.Group className='mb-3' controlId='additionalImageFile'>
+                <Form.Label>Upload Additional Image</Form.Label>
+                    <Form.Control
+                    type='file'
+                    onChange={(e)=>uploadFileHandler(e,true)}
                     />  
                 {loadingUpload && <LoadingBox></LoadingBox>} 
             </Form.Group>

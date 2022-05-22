@@ -306,3 +306,15 @@
     1. create submit review form
     2. handle submit
     3. implement backend api for review
+
+51. Upload multiple images
+
+    1. add images to product model
+    2. get images in edit screen
+    3. show images in product screen
+
+52. Implement Live Chat With Customers
+
+     1.  use socket io to create backend
+     2.  create chat box component
+     3.  create support screen
